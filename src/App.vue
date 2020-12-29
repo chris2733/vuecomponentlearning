@@ -3,8 +3,15 @@
     <h2>MY mates</h2>
     <h4>a few</h4>
     <ul>
-      <friend-contact name="eric" phone="1234234" email="sd.@d."></friend-contact>
-      <friend-contact name="janet" phone="8622" email="dfg@ff"></friend-contact>
+	<friend-contact
+		v-for="friend in friends"
+		:key="friend.id"
+		:name="friend.name"
+		:phone-number="friend.phoneNumber"
+		:email-address="friend.emailAddress"
+		:is-favourite="friend.isFavourite"
+	>
+	</friend-contact>
     </ul>
   </section>
 </template>
@@ -15,10 +22,17 @@ export default {
     return {
       friends: [
         {
-          id: "manuel",
-          name: "Manuel Iglesias",
-          phone: "1235345 23432",
-          email: "manuel@iglesias.esp",
+			id: "manuel",
+			name: "Manuel Iglesias",
+			phoneNumber: "1235345 23432",
+			emailAddress: "manuel@iglesias.esp",
+			isFavourite: true,
+        },
+        {
+			id: "janey",
+			name: "JLO Iglesias",
+			phoneNumber: "77745 23444",
+			emailAddress: "jlo@iglesias.esp",
         },
       ],
     };
